@@ -1,0 +1,14 @@
+c:\users\802542\source\repos\bloodbanksearch\bloodbanksearch\obj\Debug\netcoreapp2.1\bloodbanksearch.csproj.CoreCompileInputs.cache
+c:\users\802542\source\repos\bloodbanksearch\bloodbanksearch\obj\Debug\netcoreapp2.1\bloodbanksearch.AssemblyInfoInputs.cache
+c:\users\802542\source\repos\bloodbanksearch\bloodbanksearch\obj\Debug\netcoreapp2.1\bloodbanksearch.AssemblyInfo.cs
+c:\users\802542\source\repos\bloodbanksearch\bloodbanksearch\bin\Debug\netcoreapp2.1\bloodbanksearch.deps.json
+c:\users\802542\source\repos\bloodbanksearch\bloodbanksearch\bin\Debug\netcoreapp2.1\bloodbanksearch.runtimeconfig.json
+c:\users\802542\source\repos\bloodbanksearch\bloodbanksearch\bin\Debug\netcoreapp2.1\bloodbanksearch.runtimeconfig.dev.json
+c:\users\802542\source\repos\bloodbanksearch\bloodbanksearch\bin\Debug\netcoreapp2.1\bloodbanksearch.dll
+c:\users\802542\source\repos\bloodbanksearch\bloodbanksearch\bin\Debug\netcoreapp2.1\bloodbanksearch.pdb
+c:\users\802542\source\repos\bloodbanksearch\bloodbanksearch\obj\Debug\netcoreapp2.1\bloodbanksearch.csprojAssemblyReference.cache
+c:\users\802542\source\repos\bloodbanksearch\bloodbanksearch\obj\Debug\netcoreapp2.1\bloodbanksearch.RazorAssemblyInfo.cache
+c:\users\802542\source\repos\bloodbanksearch\bloodbanksearch\obj\Debug\netcoreapp2.1\bloodbanksearch.RazorAssemblyInfo.cs
+c:\users\802542\source\repos\bloodbanksearch\bloodbanksearch\obj\Debug\netcoreapp2.1\bloodbanksearch.RazorTargetAssemblyInfo.cache
+c:\users\802542\source\repos\bloodbanksearch\bloodbanksearch\obj\Debug\netcoreapp2.1\bloodbanksearch.dll
+c:\users\802542\source\repos\bloodbanksearch\bloodbanksearch\obj\Debug\netcoreapp2.1\bloodbanksearch.pdb

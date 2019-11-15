@@ -1,0 +1,335 @@
+
+select * from sysobjects where category=0 and type='p'
+
+select * from slot_details
+select * from blood_details
+select * from user_details
+select * from faq
+
+/****************************************************************
+  
+        *  Procedure Name: spregisteruser
+        *  Description:    Details needed for the user registration
+        *  Author:         Keerthana Jones
+        *  Created Date:   29-10-2019
+
+        *  Tables Used:    user_details
+        *  Tables Updated: user_details
+
+        *  Modified Date:  29-10-2019
+        *  Modified By:    Keerthana Jones
+
+****************************************************************/
+
+create procedure spregisteruser(@fn varchar(50),@ln varchar(50),@age int,@gen varchar(10),@em varchar(30),@cont bigint,@pass varchar(15),@weight int,@state varchar(30),@area varchar(30),@pin bigint,@bg varchar(15))
+as
+insert into user_details values(@fn,@ln,@age,@gen,@em,@cont,@pass,@weight,@state,@area,@pin,@bg,default) 
+execute spregisteruser 'Shankari','sanks',24,'Female','shank@gmail.com',9845623119,'shankari',48,'Tamilnadu','PTC','620990','Onegative'
+/****************************************************************
+  
+        *  Procedure Name: spgetuser
+        *  Description:    List all user details in user table
+        *  Author:         Keerthana Jones
+        *  Created Date:   29-10-2019
+
+        *  Tables Used:    user_details
+        *  Tables Updated: user_details
+
+        *  Modified Date:  29-10-2019
+        *  Modified By:    Keerthana Jones
+
+****************************************************************/
+
+create procedure spgetuser
+as
+select * from user_details
+execute spgetuser
+/****************************************************************
+  
+        *  Procedure Name: spsearchbl2
+        *  Description:    List all search details based on the blood group,state,area,pincode,status 
+        *  Author:         Keerthana Jones
+        *  Created Date:   29-10-2019
+
+        *  Tables Used:    blood_details
+        *  Tables Updated: blood_details
+
+        *  Modified Date:  29-10-2019
+        *  Modified By:    Keerthana Jones
+
+****************************************************************/
+ 
+alter procedure spsearchbl2(@bg varchar(15),@st varchar(30),@ar varchar(30),@pin int)
+as
+select * from blood_details where Blood_Group=@bg and State=@st and Status='Yes' and Area=@ar and Pin_Code=@pin
+execute spsearchbl2 'A-','Tamilnadu','Mettukupam',60001
+/****************************************************************
+  
+        *  Procedure Name: sploginus
+        *  Description:    Details needed for the user login
+        *  Author:         Keerthana Jones
+        *  Created Date:   29-10-2019
+
+        *  Tables Used:    user_details
+        *  Tables Updated: user_details
+
+        *  Modified Date:  29-10-2019
+        *  Modified By:    Keerthana Jones
+
+****************************************************************/
+
+
+create proc sploginus(@userid int,@pswd varchar(50))
+as
+select * from user_details where UserId=@userid and Pass=@pswd
+execute sploginus '1005','hirthik'
+
+       
+/****************************************************************
+  
+        *  Procedure Name: spreqPostBlood
+        *  Description:    Inserting the blood requirement details
+        *  Author:         Keerthana Jones
+        *  Created Date:   29-10-2019
+
+        *  Tables Used:    blood_details
+        *  Tables Updated: blood_details
+
+        *  Modified Date:  30-10-2019
+        *  Modified By:    Keerthana Jones
+
+****************************************************************/
+
+alter procedure spreqPostBlood(@usid int,@blood varchar(15),@state varchar(30),@area varchar(30),@pin int,@cont bigint)
+as
+insert into blood_details values(@usid,@blood,@state,@area,@pin,@cont,'No') 
+execute spreqPostBlood 1005,'AB+','Tamilnadu','Tuticorin',60001,832748893
+       
+/****************************************************************
+  
+        *  Procedure Name: spdisplayreq
+        *  Description:    List all blood details where status is No
+        *  Author:         Keerthana Jones
+        *  Created Date:   29-10-2019
+
+        *  Tables Used:    blood_details
+        *  Tables Updated: blood_details
+
+        *  Modified Date:  29-10-2019
+        *  Modified By:    Keerthana Jones
+
+****************************************************************/
+
+create procedure spdisplayreq
+as
+select * from blood_details where Status='No'
+execute spdisplayreq
+/****************************************************************
+  
+        *  Procedure Name: spgetidafterreg
+        *  Description:    List user detail of the top most record ordered by userid 
+        *  Created Date:   29-10-2019
+
+        *  Tables Used:    user_details
+        *  Tables Updated: user_details
+
+        *  Modified Date:  29-10-2019
+        *  Modified By:    Keerthana Jones
+
+****************************************************************/
+
+create procedure spgetidafterreg
+as
+select top 1 * from user_details  ORDER BY UserId DESC ;
+execute spgetidafterreg
+/****************************************************************
+  
+        *  Procedure Name: spdonateblood
+        *  Description:    Inserting the details with status yes
+        *  Author:         Keerthana Jones
+        *  Created Date:   30-10-2019
+
+        *  Tables Used:    blood_details
+        *  Tables Updated: blood_details
+
+        *  Modified Date:  30-10-2019
+        *  Modified By:    Keerthana Jones
+
+****************************************************************/                   
+
+alter procedure spdonateblood(@usid int,@blood varchar(15),@state varchar(30),@area varchar(30),@pin int,@cont bigint)
+as
+insert into blood_details  values(@usid,@blood,@state,@area,@pin,@cont,'Yes') 
+execute spdonateblood 1005,'A+','Tamilnadu','Tuticorin',60001,832748893
+
+/****************************************************************
+  
+        *  Procedure Name: spslot
+        *  Description:    Inserting details in slot_details table
+        *  Author:         Keerthana Jones
+        *  Created Date:   29-10-2019
+
+        *  Tables Used:    slot_details
+        *  Tables Updated: slot_details
+
+        *  Modified Date:  29-10-2019
+        *  Modified By:    Keerthana Jones
+
+****************************************************************/
+
+create procedure spslot(@uid int,@hos varchar(30),@city varchar(30),@date date,@time varchar(20))
+as
+insert into slot_details  values(@uid,@hos,@city,@date,@time,null) 
+execute spslot 1005,'Apollo','Tuticorin','2019-12-24','10.00AM-12.00PM'
+
+/****************************************************************
+  
+        *  Procedure Name: spgetblood
+        *  Description:    List all the blood details for Admin
+        *  Author:         Keerthana Jones
+        *  Created Date:   29-10-2019
+
+        *  Tables Used:    slot_details
+        *  Tables Updated: slot_details
+
+        *  Modified Date:  29-10-2019
+        *  Modified By:    Keerthana Jones
+
+****************************************************************/
+create procedure spgetblood
+as
+select * from blood_details
+execute spgetblood
+
+/****************************************************************
+  
+        *  Procedure Name: spgetslotdetail
+        *  Description:    List all slot details based on hospital,city,date and time for donating
+        *  Author:         Keerthana Jones
+        *  Created Date:   29-10-2019
+
+        *  Tables Used:    slot_details
+        *  Tables Updated: slot_details
+
+        *  Modified Date:  29-10-2019
+        *  Modified By:    Keerthana Jones
+
+****************************************************************/
+
+create procedure spgetslotdetail(@hos varchar(30),@city varchar(30),@date date,@time varchar(20))
+as
+select * from slot_details where  Hospital=@hos and City=@city and Date_for_donating=@date and Time_for_donating=@time  
+execute spgetslotdetail 'Apollo','Tuticorin','2019-12-24','10.00AM-12.00PM'
+/****************************************************************
+  
+        *  Procedure Name: spgetslot
+        *  Description:    List all details in slot_details
+        *  Author:         Keerthana Jones
+        *  Created Date:   29-10-2019
+
+        *  Tables Used:    slot_details
+        *  Tables Updated: slot_details
+
+        *  Modified Date:  29-10-2019
+        *  Modified By:    Keerthana Jones
+
+****************************************************************/
+
+create procedure  spgetslot
+as
+select * from slot_details
+execute spgetslot
+
+/****************************************************************
+  
+        *  Procedure Name: spgetfaq
+        *  Description:    List all details in Faq table
+        *  Author:         Keerthana Jones
+        *  Created Date:   29-10-2019
+
+        *  Tables Used:    faq
+        *  Tables Updated: faq
+
+        *  Modified Date:  30-10-2019
+        *  Modified By:    Keerthana Jones
+
+****************************************************************/    
+
+create procedure spgetfaq
+as
+select * from faq
+execute spgetfaq
+
+/****************************************************************
+  
+        *  Procedure Name: spaddques
+        *  Description:    Inserting questions in faq table
+        *  Modified Date:  30-10-2019
+        *  Modified By:    Keerthana Jones
+
+****************************************************************/
+
+alter procedure spaddques(@usid int,@ques varchar(500))
+as
+insert into faq values(@usid,@ques,'Not yet answered')
+execute spaddques 1006,'I tried booking a slot.But Icannot,Why?'
+/****************************************************************
+  
+        *  Procedure Name: spdisplayque
+        *  Description:    List all questions which are not answered by admin
+        *  Author:         Keerthana Jones
+        *  Created Date:   29-10-2019
+
+        *  Tables Used:    faq
+        *  Tables Updated: faq
+
+        *  Modified Date:  30-10-2019
+        *  Modified By:    Keerthana Jones
+
+****************************************************************/           
+
+alter procedure spdisplayque 
+as 
+select * from faq where Answers='Not yet answered' 
+execute spdisplayque 
+/****************************************************************
+  
+        *  Procedure Name: spaddans
+        *  Description:    Update the faq table with answers by admin
+        *  Author:         Keerthana Jones
+        *  Created Date:   29-10-2019
+
+        *  Tables Used:    faq
+        *  Tables Updated: faq
+
+        *  Modified Date:  29-10-2019
+        *  Modified By:    Keerthana Jones
+
+****************************************************************/
+
+create procedure spaddans(@id int,@ans varchar(500))
+as
+update faq set Answers=@ans where Id=@id
+execute spaddans 1002,'jk'
+
+/****************************************************************
+  
+        *  Procedure Name: updatedone
+        *  Description:    Update blood details with status done
+        *  Author:         Keerthana Jones
+        *  Created Date:   12-10-2019
+
+        *  Tables Used:    blood_details
+        *  Tables Updated: blood_details
+
+        *  Modified Date:  12-10-2019
+        *  Modified By:    Keerthana Jones
+
+****************************************************************/    
+
+create procedure updatedone(@id bigint)
+as
+update blood_details 
+set Status='Done'
+where Id=@id
+execute updatedone 120

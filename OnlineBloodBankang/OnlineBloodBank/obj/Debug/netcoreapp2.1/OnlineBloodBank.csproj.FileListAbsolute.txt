@@ -1,0 +1,14 @@
+c:\users\802542\source\repos\OnlineBloodBank\OnlineBloodBank\obj\Debug\netcoreapp2.1\OnlineBloodBank.csproj.CoreCompileInputs.cache
+c:\users\802542\source\repos\OnlineBloodBank\OnlineBloodBank\obj\Debug\netcoreapp2.1\OnlineBloodBank.AssemblyInfoInputs.cache
+c:\users\802542\source\repos\OnlineBloodBank\OnlineBloodBank\obj\Debug\netcoreapp2.1\OnlineBloodBank.AssemblyInfo.cs
+c:\users\802542\source\repos\OnlineBloodBank\OnlineBloodBank\bin\Debug\netcoreapp2.1\OnlineBloodBank.deps.json
+c:\users\802542\source\repos\OnlineBloodBank\OnlineBloodBank\bin\Debug\netcoreapp2.1\OnlineBloodBank.runtimeconfig.json
+c:\users\802542\source\repos\OnlineBloodBank\OnlineBloodBank\bin\Debug\netcoreapp2.1\OnlineBloodBank.runtimeconfig.dev.json
+c:\users\802542\source\repos\OnlineBloodBank\OnlineBloodBank\bin\Debug\netcoreapp2.1\OnlineBloodBank.dll
+c:\users\802542\source\repos\OnlineBloodBank\OnlineBloodBank\bin\Debug\netcoreapp2.1\OnlineBloodBank.pdb
+c:\users\802542\source\repos\OnlineBloodBank\OnlineBloodBank\obj\Debug\netcoreapp2.1\OnlineBloodBank.csprojAssemblyReference.cache
+c:\users\802542\source\repos\OnlineBloodBank\OnlineBloodBank\obj\Debug\netcoreapp2.1\OnlineBloodBank.RazorAssemblyInfo.cache
+c:\users\802542\source\repos\OnlineBloodBank\OnlineBloodBank\obj\Debug\netcoreapp2.1\OnlineBloodBank.RazorAssemblyInfo.cs
+c:\users\802542\source\repos\OnlineBloodBank\OnlineBloodBank\obj\Debug\netcoreapp2.1\OnlineBloodBank.RazorTargetAssemblyInfo.cache
+c:\users\802542\source\repos\OnlineBloodBank\OnlineBloodBank\obj\Debug\netcoreapp2.1\OnlineBloodBank.dll
+c:\users\802542\source\repos\OnlineBloodBank\OnlineBloodBank\obj\Debug\netcoreapp2.1\OnlineBloodBank.pdb

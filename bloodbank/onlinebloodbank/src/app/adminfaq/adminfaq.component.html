@@ -1,0 +1,170 @@
+<style>
+.jumbotron {
+   background: rgb(200, 54, 54); /* This is for ie8 and below */
+   background: rgba(200, 54, 54, 0.5); 
+}
+.pad
+{
+  padding-right: 70px;
+}
+.bg
+ {
+     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS2VRQR85YqOPNicpaLikhrx0mLSbWmXI42fPXlxRAxmtkWbii8");
+     background-size:cover;
+     min-height:700px;
+ }
+          .bg1
+          {
+            background: rgba(14, 12, 12, 0.63); /* This is for ie8 and below */
+
+          }
+          .card {
+       min-height: 200px;
+   }
+.con
+{
+  background: rgb(22, 21, 21); /* This is for ie8 and below */
+      background: rgba(19, 18, 18, 0.918); 
+}
+
+.footer {
+  position:relative;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+  
+   color: white;
+   text-align: center;
+}
+     
+      h6{
+        text-emphasis-color: black;
+      }
+    
+      </style>
+       <body class="bg">
+           <header>
+
+              <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                  <!-- Brand/logo -->
+                  <a class="navbar-brand" href="#">
+                    <img src="/assets/final.png" style="width:40px;">
+                  </a>
+                  <a class="navbar-brand" href="#">Blood Donation</a>
+                  <!-- Links -->
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" style="color:white" data-target="#collapsibleNavbar">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"> 
+                      <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+                    </li>
+                   
+                
+                    <li class="nav-item"> 
+                        <a class="nav-link" routerLink='/pagecus'><i class="fa fa-user-circle" aria-hidden="true"></i>{{userservice.activeusername}}</a>
+                        </li>
+                          <li class="nav-item"> 
+                              <a class="nav-link" (click)="logout()" routerLink='/home'><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+                            </li>
+                         
+                  </ul>
+                  </div>
+                </nav>
+    </header>
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#details">Blood Details</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link fade" data-toggle="tab" href="#faq">FAQ</a>
+            </li>
+        </ul>
+ <div class="tab-content">
+   <div id="details" class="container tab-pane active">
+      <table class="container">
+          <tr>
+            <th>Id</th>
+            <th>User Id</th>
+            <th>BloodGroup</th>
+            <th>State</th>
+            <th>Area</th>
+             
+            <th>Contact</th>
+            <th>Status</th>
+          </tr>
+        
+                   <tr *ngFor="let item  of  blood">
+                      <td>{{item.id}}</td>
+                      <td>{{item.userId}}</td>
+                      <td>{{item.bloodGroup}}</td>
+                       <td>{{item.state}}</td>   
+                       <td>{{item.area}}</td>
+                       <td>{{item.contact}}</td>
+                       <td><p *ngIf="item.status=='Yes'">Available</p>
+                        <p *ngIf="item.status=='No'">Required</p>
+                        <p *ngIf="item.status=='Done'">Completed</p>
+                      </td>
+                      </tr>
+                      <br/>
+        </table>
+   </div>
+         <div id="faq" class="container tab-pane ">
+ 
+   <div class="jumbotron ">
+    
+     <h2><i class="fa fa-question-circle" aria-hidden="true"></i>FAQ</h2>
+    
+   <div class="card card mx-auto bg1" style="width:400px;height:300px">
+    <div class="container">
+   <form (ngSubmit)="onSubmit(faqform)" #admin="ngForm">
+        <div>
+                <label><b style="color: whitesmoke;">Qusetion ID</b></label><br/>
+                <input type="text" name="quesid" class="form-control" placeholder="Enter Question ID" #id="ngModel" [(ngModel)]="faqform.id">
+              
+         </div>
+         <div>
+                <label><b style="color: whitesmoke;">Answer</b></label><br/>
+                <textarea rows="4" name="answer" cols="50" placeholder="Answer here..." #answers="ngModel" [(ngModel)]="faqform.answers">     
+                 </textarea>
+         </div>
+       <button class="btn btn-default btn-danger" type="submit">Submit</button>
+
+      <div class="pad">
+        <div class="alert alert-success" *ngIf="!check">
+          <strong>{{msg}}</strong> 
+        </div>
+      </div>
+  
+   </form>
+  </div>
+  </div>
+</div>
+   <br/>
+   <div class="container">
+   <table class="container table table-sm" >
+       <tr>
+           <th>Question Id</th>
+           <th>User Id</th>
+           <th>Questions</th>
+           <th>Answer</th>
+           
+           
+           <th></th>
+       </tr>
+       <tr *ngFor="let item of faq">
+           <td>{{item.id}}</td>
+           <td>{{item.userId}}</td>
+           <td>{{item.questions}}</td> 
+           <td>{{item.answers}}</td>       
+       </tr>
+   </table>
+  </div>
+     </div>
+</div>
+   <footer class="bottom-footer footer bg-dark">
+      <p style="margin-left:50px">copyright 2019</p>
+</footer>
+   
+   

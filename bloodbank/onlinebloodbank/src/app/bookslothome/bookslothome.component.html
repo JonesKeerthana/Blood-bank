@@ -1,0 +1,154 @@
+
+<style>
+  
+  .bg
+ {
+     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS2VRQR85YqOPNicpaLikhrx0mLSbWmXI42fPXlxRAxmtkWbii8");
+     background-size:cover;
+     min-height:700px;
+ }
+ .footer {
+  position:fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+  
+   color: white;
+   text-align: center;
+}
+.container {
+        padding: 16px;
+         background: rgba(207, 80, 80, 0.644); /* This is for ie8 and below */
+         background: rgba(204, 79, 79, 0.5); 
+                 }
+</style>
+<body class="bg">
+    <header>
+
+      
+     
+
+       <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="#">
+                <img src="/assets/final.png" style="width:40px;">
+              </a>
+               
+              <button class="navbar-toggler" type="button" data-toggle="collapse" style="color:white" data-target="#collapsibleNavbar">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="collapsibleNavbar">
+             
+              <ul class="navbar-nav">
+                  <div class="navbar-nav ml-auto">
+                 
+                      <a class="nav-link" routerLink="/custpage"><i class="fa fa-user-circle" aria-hidden="true"></i>{{userser.activeusername}}</a>
+                    
+                  </div>
+                <li class="nav-item ml-auto">
+                  <a class="nav-link" routerLink="/custpage"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+                </li>
+                <li class="nav-item ml-auto">
+                    <a class="nav-link" routerLink='/cusfaq'>FAQ</a>
+                  </li>
+             <div class="navbar-nav ml-auto">
+                 
+                <a class="nav-link" (click)="logout()" routerLink='/home'>logout</a>
+              
+            </div>
+              </ul>
+              </div>
+            </nav> 
+        <br/>
+        <br/>
+              </header>
+         <b>Book the slot here</b>
+         <div class="container">
+            <form (ngSubmit)="onSubmitslot(slotdetails)" #loginForm="ngForm">
+           
+            <div class="row">
+                <div class="col-sm" >
+                  <div class="form-group">
+                   <label for="hospital"><b>Hospital</b></label>  <br/>
+                   <select  id="hospital" [(ngModel)]="slotdetails.hospital" placeholder="Enter Hospital" required [class.is-invalid]="hospital.invalid && hospital.touched" class="form-control" #hospital="ngModel" name="hospital">
+                      <option value="Apollo">Apollo</option>
+                      <option value="Kamatchi">Kamatchi</option>
+                      <option value="A.V.M">A.V.M</option>
+                      <option value="Global">Global</option>
+                      <option value="Velammal">Velammal</option>
+                  </select>  
+                  <b class="text-danger" [class.d-none]="hospital.valid || hospital.untouched">
+                        Hospital is Required
+                  </b>
+                  </div>
+                 </div>
+   
+        
+                <div class="col-sm">    
+                    <div class="form-group">                  
+                      <label for="city"><b>City</b></label>  <br/>
+                  <select   id="city" [(ngModel)]="slotdetails.city"  placeholder="Enter City" required [class.is-invalid]="city.invalid && city.touched" class="form-control" #city="ngModel" name="city">
+                       
+    <option value="Shollinganalur">Shollinganalur</option>
+    <option value="PTC">PTC</option>
+    <option value="Tnagar">Tnagar</option>
+    <option value="Medavakkam">Medavakkam</option>
+    <option value="Tuticorin">Tuticorin</option>
+                      
+              
+                  </select>  
+                  <b class="text-danger" [class.d-none]="city.valid || city.untouched">
+                        City is Required
+                  </b>
+                  </div>
+                </div>
+            </div>
+           <div class="row">
+              <div class="col-sm" >
+                  <div class="form-group">
+                  <label for="dateForDonating"><b>Date</b></label>  <br/>
+                  <input type="date" class="form-control"  placeholder="Enter Date" required [class.is-invalid]="dateForDonating.invalid && dateForDonating.touched" id="dateForDonating"  placeholder="Enter Date" name="dateForDonating" [(ngModel)]="slotdetails.dateForDonating" #dateForDonating="ngModel"  min='2019-11-15' max='2020-05-10'>
+                  </div>
+                   
+                  <b class="text-danger" *ngIf="checkdate(dateForDonating.value)" >
+                      Date is Required or invalid
+                 </b>
+  
+              </div>
+      
+              <div class="col-sm">      
+                  <div class="form-group">                     
+                      <label for="timeForDonating"><b>Time</b></label><br/>
+                      <select id="timeForDonating"  placeholder="Enter Hospital" required [class.is-invalid]="timeForDonating.invalid && timeForDonating.touched" [(ngModel)]="slotdetails.timeForDonating" class="form-control" #timeForDonating="ngModel" name="timeForDonating">
+                       
+                            <option value="8.00AM-10.00AM">8.00AM-10.00AM</option>
+                            <option value="10.00AM-12.00PM">10.00AM-12.00PM</option>
+                            <option value="2.00PM-4.00PM">2.00PM-4.00PM</option>
+                            <option value="4.00AM-6.00PM">4.00AM-6.00PM</option>
+                            </select>
+                 </div>
+                 <b class="text-danger" [class.d-none]="timeForDonating.valid || timeForDonating.untouched">
+                        Time is Required
+                 </b>
+              </div>
+             
+        </div>
+       <div class="row">
+              <div class="col pd">
+                <button type="submit"  class="btn btn-default btn-danger mx-auto " [disabled]="loginform.invalid" class="btn btn-default btn-danger mx-auto " >Book Slot</button><br/>
+                <!-- <p style="color: whitesmoke;">{{msg1}}</p><br/> -->
+                <div *ngIf="success">  <div class="alert alert-danger" *ngIf="check">
+                  <strong>{{msg1}}</strong> 
+                </div>
+                <div class="alert alert-success" *ngIf="!check">
+                  <strong>{{msg1}}</strong> 
+                </div></div>
+              
+              </div>
+       </div>  
+           </form>
+</div>
+           
+  <footer class="bottom-footer footer bg-dark">
+          <p style="margin-left:50px">copyright 2019</p>
+  </footer>
+  </body>

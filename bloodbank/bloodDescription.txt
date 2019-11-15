@@ -1,0 +1,37 @@
+WebApi-Controllers
+1.login
+	1.login 
+	2.registration
+2.Availability
+	1.search availability
+3.Requirement Posting
+	1.requirement posting
+	2.requirement display
+4.donate
+	1.donate 
+	2.slot booking
+5.faq
+	1.faq question posting
+	2.faq answering
+
+
+components
+1.home
+2.user
+	login
+	reg
+3.customer page
+4.search
+5.postreq
+6.donate
+7.direct donate
+8.admin faq
+9.cust faq
+
+
+service
+1.user
+2.blood-search and post
+3.admin
+4.donate
+5.user-auth & authguard

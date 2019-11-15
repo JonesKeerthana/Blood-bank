@@ -1,0 +1,14 @@
+C:\Users\802542\source\repos\getIdafterReg\selectid\selectid\obj\Debug\netcoreapp2.1\selectid.csproj.CoreCompileInputs.cache
+C:\Users\802542\source\repos\getIdafterReg\selectid\selectid\obj\Debug\netcoreapp2.1\selectid.AssemblyInfoInputs.cache
+C:\Users\802542\source\repos\getIdafterReg\selectid\selectid\obj\Debug\netcoreapp2.1\selectid.AssemblyInfo.cs
+C:\Users\802542\source\repos\getIdafterReg\selectid\selectid\bin\Debug\netcoreapp2.1\selectid.deps.json
+C:\Users\802542\source\repos\getIdafterReg\selectid\selectid\bin\Debug\netcoreapp2.1\selectid.runtimeconfig.json
+C:\Users\802542\source\repos\getIdafterReg\selectid\selectid\bin\Debug\netcoreapp2.1\selectid.runtimeconfig.dev.json
+C:\Users\802542\source\repos\getIdafterReg\selectid\selectid\bin\Debug\netcoreapp2.1\selectid.dll
+C:\Users\802542\source\repos\getIdafterReg\selectid\selectid\bin\Debug\netcoreapp2.1\selectid.pdb
+C:\Users\802542\source\repos\getIdafterReg\selectid\selectid\obj\Debug\netcoreapp2.1\selectid.csprojAssemblyReference.cache
+C:\Users\802542\source\repos\getIdafterReg\selectid\selectid\obj\Debug\netcoreapp2.1\selectid.RazorAssemblyInfo.cache
+C:\Users\802542\source\repos\getIdafterReg\selectid\selectid\obj\Debug\netcoreapp2.1\selectid.RazorAssemblyInfo.cs
+C:\Users\802542\source\repos\getIdafterReg\selectid\selectid\obj\Debug\netcoreapp2.1\selectid.RazorTargetAssemblyInfo.cache
+C:\Users\802542\source\repos\getIdafterReg\selectid\selectid\obj\Debug\netcoreapp2.1\selectid.dll
+C:\Users\802542\source\repos\getIdafterReg\selectid\selectid\obj\Debug\netcoreapp2.1\selectid.pdb

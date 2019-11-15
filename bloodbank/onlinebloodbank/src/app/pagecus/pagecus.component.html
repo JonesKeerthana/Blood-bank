@@ -1,0 +1,223 @@
+<style>
+     .flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+      background: rgba(20, 2, 2, 0.877); /* This is for ie8 and below */
+      background: rgba(27, 3, 3, 0.918); ;
+  color: white;
+  transform: rotateY(180deg);
+}
+.jumbotron
+{
+  background: rgb(200, 54, 54); /* This is for ie8 and below */
+   background: rgba(200, 54, 54, 0.5); 
+}
+.img1
+{
+  background-image:url('https://ih1.redbubble.net/image.652010729.0760/poster,840x830,f8f8f8-pad,750x1000,f8f8f8.u2.jpg');
+           background-size:cover;
+          
+}
+
+.img2
+{
+  background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTd-B5LtLuoM4DkcOwczG6-MHlPGUht6-3I0S8cNyse64RjjutR');
+           background-size:cover;
+          
+}
+
+.img3
+{
+  background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSsCIWpSjlZEMKzDbtYvzol8ehtEk44mPbkbljA5kTldz4j3UNK');
+           background-size:cover;
+          
+}
+.bg
+ {
+     background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS2VRQR85YqOPNicpaLikhrx0mLSbWmXI42fPXlxRAxmtkWbii8");
+     background-size:cover;
+     min-height:700px;
+ }
+       .bg1
+       {
+         background: rgba(20, 2, 2, 0.644); /* This is for ie8 and below */
+      background: rgba(27, 3, 3, 0.5); 
+       }
+       .card {
+    min-height: 200px;
+}
+
+.card{
+    text-shadow: voff blur ;
+    text-align: center;
+}
+       .footer {
+    
+      left: 0;
+      bottom: 0;
+      width: 100%;
+     position: fixed;
+      color: white;
+      text-align: center;
+   }
+ 
+   .card
+   {
+     background: rgba(37, 3, 3, 0.425); /* This is for ie8 and below */
+      background: rgba(20, 5, 1, 0.836); 
+      color: whitesmoke;
+   }
+   .but{
+    background: rgb(200, 54, 54); /* This is for ie8 and below */
+      background: rgba(200, 54, 54, 0.5); 
+   }
+   .pad{
+     padding:100px;
+   }
+   .pad1{
+     padding:85px;
+   }
+   h6{
+     text-emphasis-color: black;
+   }
+   </style>
+    <body class="bg">
+        <header>
+  
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <a class="navbar-brand" href="#">
+                    <img src="/assets/final.png" style="width:40px;">
+                  </a>
+                   
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" style="color:white" data-target="#collapsibleNavbar">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                 
+                  <ul class="navbar-nav">
+                      <div class="navbar-nav ml-auto">
+                         
+                          <a class="nav-link" routerLink="/custpage"><i class="fa fa-user-circle" aria-hidden="true"></i>{{userservice.activeusername}}</a>
+                        
+                      </div>
+                    <li class="nav-item ml-auto">
+                      <a class="nav-link" routerLink="/custpage"><i class="fa fa-home" aria-hidden="true"></i>Home</a>
+                    </li>
+                    <li class="nav-item ml-auto">
+                        <a class="nav-link" routerLink='/cusfaq'>FAQ</a>
+                      </li>
+                 <div class="navbar-nav ml-auto">
+                     
+                    <a class="nav-link" (click)="logout()" routerLink='/home'>logout</a>
+                  
+                </div>
+                  </ul>
+                  </div>
+                </nav> 
+
+      </header>
+  <div class="jumbotron">
+      <div class="container">
+         <div class="row">
+        <div class="col-sm">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img class="img1" style="width:300px;height:300px;">
+                  </div>
+                  <div class="flip-card-back">
+                      <div class="pad"><button routerLink='/search' class="btn btn-default btn-danger mx-auto">Search</button></div>
+                  </div>
+                </div>
+              </div>
+              <b style="margin-left: 100px;">Search Blood</b>
+        </div>
+        <div class="col-sm">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front">
+                    <img class="img2" style="width:300px;height:300px;">
+                  </div>
+                  <div class="flip-card-back">
+                      <div class="pad1"><button routerLink='/postreq' class="btn btn-default btn-danger mx-auto">Post Requiremnets</button></div>
+                  </div>
+                </div>
+              </div>
+              <b style="margin-left: 100px;">Post Requiremnets</b>
+        </div>
+        <div class="col-sm">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img class="img3" style="width:300px;height:300px;">
+              </div>
+              <div class="flip-card-back">
+                  <div class="pad"><button routerLink='/donate'class="btn btn-default btn-danger mx-auto">Donate</button></div>
+              </div>
+            </div>
+          </div>
+          <b style="margin-left: 100px;">Donate Blood</b>
+        </div>
+      </div>
+      <br/>
+ 
+       </div>
+    <h2 style="margin-left: 60px;">“A single pint can save three lives, a single gesture can create a million smiles”</h2> 
+</div>
+
+    
+
+    
+<br/>
+<br/>
+<div class="container">
+    <div class="card-columns">
+      <div class="card" style="width:290px;height:200px ;" *ngFor="let item  of  filteredItems |async">
+        <div class="card-body text-center">
+            <span class="card-title " style="font-size:20px">{{item.bloodGroup}}</span><br/>
+            <span style="float:center">{{item.state}}</span><br/>
+            <span style="float:center">{{item.area}}</span><br/>
+            <span style="float:center">{{item.pinCode}}</span><br/>
+            <span style="float:center"><button class="btn btn-default btn-danger" routerLink="/bookslothome/{{item.id}}">Donate</button></span>
+            <br/>
+        </div>
+      </div>
+    
+    </div>
+    </div>
+
+       <footer class="bottom-footer footer bg-dark">
+        <p style="margin-left:50px">copyright 2019</p>
+      </footer>
+
